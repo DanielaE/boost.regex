@@ -28,6 +28,7 @@
 #ifdef BOOST_MSVC
 #  pragma warning(push)
 #  pragma warning(disable: 4800)
+#  pragma warning(disable: 4244)
 #endif
 
 namespace boost{
@@ -122,7 +123,7 @@ inline int string_compare(const Seq& s, const C* p)
    {
       ++i;
    }
-   return (i == s.size()) ? -p[i] : s[i] - p[i];
+   return (i == s.size()) ? 0u - p[i] : s[i] - p[i];
 }
 # define STR_COMP(s,p) string_compare(s,p)
 

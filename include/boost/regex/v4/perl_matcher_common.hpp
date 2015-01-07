@@ -37,6 +37,7 @@
 #ifdef BOOST_MSVC
 #  pragma warning(push)
 #  pragma warning(disable: 4800)
+#  pragma warning(disable: 4244)
 #endif
 
 namespace boost{
