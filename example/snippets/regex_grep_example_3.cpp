@@ -90,7 +90,7 @@ void class_index::IndexClasses(const std::string& file)
             end,
             expression);
 #else
-   boost::regex_grep(std::bind1st(std::mem_fun(&class_index::grep_callback), this),
+   boost::regex_grep(std::bind(&class_index::grep_callback, this, std::placeholders::_1),
             start,
             end,
             expression);
